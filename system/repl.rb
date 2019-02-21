@@ -18,13 +18,24 @@ module System
         repl
       end
 
+      def repl_exit
+        puts 'Bye!'
+        exit(0)
+      end
+
       private
 
       def console_read
         System::Printer.prompt
-        tokens = System::Parser.process(gets())
+
+        input = gets()
+        repl_exit if input.nil?
+
+        tokens = System::Parser.process(input)
         System::Printer.debug(tokens, 'tokens')
-      rescue BadCommandException
+      rescue SignalException => e
+        repl_exit
+      rescue Errors::BadCommandException
         console_print(Printer.help)
       rescue RuntimeError => e
         binding.pry
