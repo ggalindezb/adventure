@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require 'system/parser'
-require 'system/printer'
-require 'system/exceptions'
-
 module System
   # Command line for the Adventure program
   class Repl
