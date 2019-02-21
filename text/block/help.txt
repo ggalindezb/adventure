@@ -1,0 +1,10 @@
+This is the help text. As of now, it doesn't have any useful information. It
+should contain something along the lines of:
+
+- Controls
+- Interface, if this gets ncurses
+- What stuff means
+- How to use the in-game mechanisms
+
+As of now, this is a standard text block, 80-columns wide, standard for console
+printing. Maybe it'll get another format.
