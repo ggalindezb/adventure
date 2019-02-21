@@ -8,13 +8,14 @@ module System
         # TODO: Print help
         # TODO: Enter loop
       def start
-        # System::Printer.banner
-        # System::Printer.help
-        # loop
+        System::Printer.banner
+        System::Printer.help
+        repl
       end
 
-      def loop
+      def repl
         console_read
+        repl
       end
 
       private
@@ -22,7 +23,7 @@ module System
       def console_read
         System::Printer.prompt
         tokens = System::Parser.process(gets())
-        System::Printer.debug(tokens)
+        System::Printer.debug(tokens, 'tokens')
       rescue BadCommandException
         console_print(Printer.help)
       rescue RuntimeError => e

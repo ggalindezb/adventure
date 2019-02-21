@@ -11,22 +11,20 @@ module System
       end
 
       def banner
-        # Fetch text
-        # Print it
+        puts Text::Manager.fetch_graphic(:banner)
       end
 
       def help
-        # Fetch help text
-        # Print it
-        puts ''
+        puts Text::Manager.fetch_block(:help)
       end
 
       # Print the inventory, preferably, in a very fashionable way
       def inventory
       end
 
-      def debug(payload)
-        puts "[DEBUG] #{ap payload}"
+      def debug(payload, message = nil)
+        puts "[DEBUG]#{": #{message}" if message}"
+        ap payload
       end
 
       private
