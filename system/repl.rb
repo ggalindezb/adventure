@@ -10,6 +10,7 @@ module System
       def start
         System::Printer.banner
         System::Printer.help
+        @engine = Game::Engine.new
         repl
       end
 
